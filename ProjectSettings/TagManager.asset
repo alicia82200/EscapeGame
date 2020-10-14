@@ -8,6 +8,9 @@ TagManager:
   - projectile
   - zecanvas
   - Phone
+  - FxTemporaire
+  - Key
+  - Lock
   layers:
   - Default
   - TransparentFX
