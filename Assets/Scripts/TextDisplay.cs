@@ -69,7 +69,7 @@ public class TextDisplay : MonoBehaviour
     {
         textObjects[0].fontSize = 40;
         textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
-        textObjects[0].text = "Vous avez effacé toutes les photos comprometantes !";
+        textObjects[0].text = "Vous avez réussi à vous évader, bravo !";
         timerRunning = false;
     }
 

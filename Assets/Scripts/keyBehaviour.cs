@@ -15,7 +15,7 @@ public class keyBehaviour : MonoBehaviour
     void Start()
     {
         isHeld = false;
-        isUsed = true;
+        isUsed = false;
     }
 
     // Update is called once per frame
@@ -25,16 +25,11 @@ public class keyBehaviour : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (col.tag == "Lock")
+        if (collision.collider.tag == "Lock")
         {
             isUsed = true;
         }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        
     }
 }

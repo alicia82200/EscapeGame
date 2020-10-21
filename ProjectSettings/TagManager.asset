@@ -11,6 +11,7 @@ TagManager:
   - FxTemporaire
   - Key
   - Lock
+  - Canva2
   layers:
   - Default
   - TransparentFX

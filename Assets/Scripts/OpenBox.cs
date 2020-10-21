@@ -30,18 +30,9 @@ public class OpenBox : MonoBehaviour
         }
         
 
-        if (this.GetComponent<Interactable>().isHovering)
-        {
-            open = true;
-        }
-        else
-        {
-            open = false;
-        }
-
         if (GameObject.FindWithTag("Key").GetComponent<keyBehaviour>().isUsed && open)   //peut s'ouvrir si on a la clé en main
         {
-            unlock = !unlock;
+            unlock = true;
         }
     }
 
@@ -59,5 +50,10 @@ public class OpenBox : MonoBehaviour
         {
             open = false;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        open = true;
     }
 }
