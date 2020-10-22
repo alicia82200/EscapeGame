@@ -16,12 +16,14 @@ public class OpenDoor : MonoBehaviour {
 	private Vector3 openRot;
     private Vector3 defaultPos;
     private Vector3 openPos;
-    private bool open;
+    public bool open = false;
 	private bool enter = false;
+
+    public bool finalDoor;
 
 	// Use this for initialization
 	void Start () {
-		
+
 			defaultRot = transform.eulerAngles;
 			openRot = new Vector3 (defaultRot.x, defaultRot.y + DoorOpenAngle, defaultRot.z);
             defaultPos = transform.position;
@@ -38,29 +40,40 @@ public class OpenDoor : MonoBehaviour {
                 gameObject.GetComponent<AudioSource>().PlayOneShot(OpenAudio);
                 AudioS = true;
             }
+
+            if(finalDoor)
+            {
+                TextDisplay message = new TextDisplay();
+                message.EndGame();
+            }
             
-		} else {
+
+        } else {
             transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
-			if (AudioS == true) {
+            transform.position = Vector3.Slerp(transform.position, defaultPos, Time.deltaTime * smooth);
+            if (AudioS == true) {
 				gameObject.GetComponent<AudioSource> ().PlayOneShot (CloseAudio);
 				AudioS = false;
 			}
 			
 
 		}
-        if (this.GetComponent<Interactable>().isHovering)   
+        
+        if (finalDoor == false)
         {
-            enter = true;
+            if (GameObject.FindWithTag("Phone").GetComponent<phoneBehavior>().isLocked == false && enter)   //peut s'ouvrir si on a résolu l'enigme du telephone et qu'on selectionne la porte
+            {
+                open = !open;
+            }
         }
-        else
+        else if (finalDoor)
         {
-            enter = false;
+            if (GameObject.FindWithTag("LastEnigma").GetComponent<LastEnigmaScript>().isLocked == false && enter)   //peut s'ouvrir si on a résolu l'enigme du telephone et qu'on selectionne la porte
+            {
+                open = !open;
+            }
         }
         
-        if (GameObject.FindWithTag("Phone").GetComponent<phoneBehavior>().isLocked == false && enter)   //peut s'ouvrir si on a résolu l'enigme du telephone et qu'on selectionne la porte
-        {
-            open = !open;
-        }
     }
 
 	void OnTriggerEnter(Collider col)
@@ -75,5 +88,15 @@ public class OpenDoor : MonoBehaviour {
 	    if (col.tag == "Player") {
 		    enter = false;
 	    }
+    }
+
+    private void OnMouseDown()
+    {
+        enter = true;
+    }
+
+    private void OnMouseUp()
+    {
+        enter = false;
     }
 }

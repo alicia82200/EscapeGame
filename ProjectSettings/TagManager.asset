@@ -12,6 +12,11 @@ TagManager:
   - Key
   - Lock
   - Canva2
+  - Sponge
+  - Notebook
+  - BlueGlass
+  - Computer
+  - LastEnigma
   layers:
   - Default
   - TransparentFX

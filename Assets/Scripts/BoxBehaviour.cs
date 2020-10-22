@@ -70,7 +70,7 @@ public class BoxBehaviour : MonoBehaviour
         gObjList.Add(g11);
         gObjList.Add(g12);
 
-        //Initialisation de quelques variables oklm
+        //Initialisation de quelques variables
         isHeld = false;
         tryCode.text = "";
         boutons = new List<buttonBehavior>();
