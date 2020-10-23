@@ -2,6 +2,9 @@
 using System.Collections;
 using Valve.VR.InteractionSystem;
 
+using UnityEngine;
+using UnityEngine.UI;
+
 public class OpenDoor : MonoBehaviour {
 
 	public float smooth = 2.0f;
@@ -43,8 +46,7 @@ public class OpenDoor : MonoBehaviour {
 
             if(finalDoor)
             {
-                TextDisplay message = new TextDisplay();
-                message.EndGame();
+                GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EndGame();
             }
             
 

@@ -335,8 +335,6 @@ public class phoneBehavior : MonoBehaviour
                 isLocked = false;
                 screenText.color = Color.green;
                 screenText.text = "True";
-                TextDisplay message = new TextDisplay();
-                message.EndGame();
             }
 
             else

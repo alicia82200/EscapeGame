@@ -17,6 +17,7 @@ TagManager:
   - BlueGlass
   - Computer
   - LastEnigma
+  - MainCanva
   layers:
   - Default
   - TransparentFX
