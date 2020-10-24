@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
-
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OpenDoor : MonoBehaviour {
 
@@ -47,6 +47,7 @@ public class OpenDoor : MonoBehaviour {
             if(finalDoor)
             {
                 GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EndGame();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             
 

@@ -18,6 +18,8 @@ public class TextDisplay : MonoBehaviour
 
     bool timerRunning = true;
 
+    int chapter;
+
     // Start is called before the first frame update
     void Start()
     {

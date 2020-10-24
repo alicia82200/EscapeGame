@@ -1023,6 +1023,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.9111338
       objectReference: {fileID: 0}
+    - target: {fileID: 108685276935522810, guid: 2c4bac5dc223a6143814698d0fdbeffc,
+        type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108685276935522810, guid: 2c4bac5dc223a6143814698d0fdbeffc,
+        type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 23261402012078158, guid: 2c4bac5dc223a6143814698d0fdbeffc,
         type: 3}
       propertyPath: m_DynamicOccludee
@@ -1878,8 +1888,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.2
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -7968,8 +7978,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.2
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -8213,6 +8223,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4942159039453770, guid: 2c4bac5dc223a6143814698d0fdbeffc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108685276935522810, guid: 2c4bac5dc223a6143814698d0fdbeffc,
+        type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108685276935522810, guid: 2c4bac5dc223a6143814698d0fdbeffc,
+        type: 3}
+      propertyPath: m_Shadows.m_NormalBias
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23261402012078158, guid: 2c4bac5dc223a6143814698d0fdbeffc,
@@ -10401,8 +10421,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.4
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
