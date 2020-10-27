@@ -18,7 +18,7 @@ public class TextDisplay : MonoBehaviour
 
     bool timerRunning = true;
 
-    int chapter;
+    public int chapter;
 
     // Start is called before the first frame update
     void Start()
@@ -59,8 +59,34 @@ public class TextDisplay : MonoBehaviour
     /// </summary>
     private void StartGame()
     {
-        textObjects[0].text = "Vous vous réveillez dans une chambre inconnue...";
-        textObjects[0].text += "Trouvez le code du portable de votre hôte pour effacer les photos compromettantes et enfuyez vous !";
+        switch (chapter)
+        {
+            case 1:
+                {
+                    textObjects[0].text = "Vous vous réveillez dans une chambre inconnue...";
+                    textObjects[0].text += "Trouvez le code du portable de votre hôte pour effacer les photos compromettantes et enfuyez vous !";
+                    break;
+                }
+            case 2:
+                {
+                    textObjects[0].text = "Vous êtes bien sorti de l'appartement mais le jardin est cloturé.";
+                    textObjects[0].text += "Trouvez un moyen d'ouvrir le portail afin de rentrer chez vous !";
+                    break;
+                }
+            case 3:
+                {
+                    textObjects[0].text = "Vous avez réussi à sortir de chez cet inconnu.";
+                    textObjects[0].text += "Rentrez chez vous !";
+                    break;
+                }
+            default:
+                {
+                    textObjects[0].text = "Default";
+                    break;
+                }
+
+        }
+
         firstText = true;
     }
 
@@ -71,7 +97,7 @@ public class TextDisplay : MonoBehaviour
     {
         textObjects[0].fontSize = 40;
         textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
-        textObjects[0].text = "Vous avez réussi à vous évader, bravo !";
+        textObjects[0].text = "Vous avez réussi, bravo !";
         timerRunning = false;
     }
 

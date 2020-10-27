@@ -5366,6 +5366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1684840103}
   numberOfMinutes: 20
+  chapter: 1
 --- !u!114 &1333936982
 MonoBehaviour:
   m_ObjectHideFlags: 0
