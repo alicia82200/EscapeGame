@@ -70,7 +70,8 @@ public class TextDisplay : MonoBehaviour
             case 2:
                 {
                     textObjects[0].text = "Vous êtes bien sorti de l'appartement mais le jardin est cloturé.";
-                    textObjects[0].text += "Trouvez un moyen d'ouvrir le portail afin de rentrer chez vous !";
+                    textObjects[0].text += "Vous êtes affamé, trouvez de quoi vous sustenter.";
+                    textObjects[0].text += "Puis cherchez un moyen d'ouvrir le portail afin de rentrer chez vous !";
                     break;
                 }
             case 3:
@@ -88,6 +89,16 @@ public class TextDisplay : MonoBehaviour
         }
 
         firstText = true;
+    }
+
+    /// <summary>
+    /// Affiche le texte apres avoir mangé
+    /// </summary>
+    public void EatWell()
+    {
+        textObjects[0].fontSize = 40;
+        textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+        textObjects[0].text = "Vous avez bien mangé, vous pouvez essayer de sortir maintenant!";
     }
 
     /// <summary>

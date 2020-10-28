@@ -1,0 +1,20 @@
+[En]
+
+Hi and thank you for downloading this model from Jetstorm_477 !
+
+> Model in 4 formats : .obj ; .sldprt ; .stl ; .3ds
+  The SolidWorks model (.sldprt) is the original file from which I created the model, and the .obj file is the main model.
+  The .3ds and .stl formats are derived, so colorless.
+
+enjoy ;)
+
+
+[Fr]
+
+Boujour et merci d'avoir téléchargé ce modèle de Jetstorm_477 !
+
+> Modèle joint en 4 formats : .obj ; .sldprt ; .stl ; .3ds
+  Le modèle SolidWorks (.sldprt) est le fichier original à partir duquel j'ai créé la pièce, et le fichier .obj est le modèle principal.
+  Les modèles .3ds et .stl sont des formats dérivés, donc sans couleur.
+
+a+ ;)

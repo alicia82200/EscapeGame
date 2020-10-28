@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Valve.VR.InteractionSystem;
-using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 

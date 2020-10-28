@@ -19,6 +19,8 @@ TagManager:
   - LastEnigma
   - MainCanva
   - Saucisse
+  - BodyCol
+  - Basketball
   layers:
   - Default
   - TransparentFX

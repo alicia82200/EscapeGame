@@ -46,4 +46,13 @@ public class SaucisseBehaviour : MonoBehaviour
         saucisseColor = new Color(colorRGB, colorRGB, colorRGB);
         gameObject.GetComponent<Renderer>().material.SetColor("_Color", saucisseColor);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "BodyCol" && saucisseState == "Good")
+        {
+            GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EatWell();
+            Destroy(this);
+        }
+    }
 }

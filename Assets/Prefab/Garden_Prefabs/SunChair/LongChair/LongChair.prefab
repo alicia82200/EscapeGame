@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2529331308865915194}
   - component: {fileID: 4109337000616800629}
   - component: {fileID: 1150716507613399686}
+  - component: {fileID: 3780199106860724081}
   m_Layer: 0
   m_Name: Cadre
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3780199106860724081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21103998982846765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032767177, y: 0.002, z: 0.0073111863}
+  m_Center: {x: -0.0063835895, y: 0.0005, z: 0.000000002052891}
 --- !u!1 &151410397885003243
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +137,7 @@ GameObject:
   - component: {fileID: 1649613698530789535}
   - component: {fileID: 3247476303974820306}
   - component: {fileID: 3022762799830591333}
+  - component: {fileID: 523327181490492729}
   m_Layer: 0
   m_Name: Cadre.001
   m_TagString: Untagged
@@ -190,6 +205,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &523327181490492729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475087302203258987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032767184, y: 0.002, z: 0.0073111877}
+  m_Center: {x: -0.006383591, y: 0.0005, z: -0.0000000017672281}
 --- !u!1 &3486702047724874056
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +229,7 @@ GameObject:
   - component: {fileID: 88069504161736133}
   - component: {fileID: 4346119326963171860}
   - component: {fileID: 3319569691847196594}
+  - component: {fileID: 6840305013416797700}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -268,6 +297,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6840305013416797700
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486702047724874056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1736622283181914040, guid: 2a47a0b23001b9a4e9ac089e50344e9e, type: 3}
 --- !u!1 &7896288373349874623
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +322,7 @@ GameObject:
   - component: {fileID: 2439586599854726914}
   - component: {fileID: 5922629566608810922}
   - component: {fileID: 264455744948479989}
+  - component: {fileID: 4703339010200593103}
   m_Layer: 0
   m_Name: Wood.001
   m_TagString: Untagged
@@ -346,3 +390,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4703339010200593103
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896288373349874623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3146441137479462500, guid: 2a47a0b23001b9a4e9ac089e50344e9e, type: 3}
