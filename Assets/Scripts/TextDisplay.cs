@@ -102,6 +102,16 @@ public class TextDisplay : MonoBehaviour
     }
 
     /// <summary>
+    /// Affiche le texte apres avoir mangé
+    /// </summary>
+    public void HungryText()
+    {
+        textObjects[0].fontSize = 40;
+        textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+        textObjects[0].text = "Vous êtes toujours affamé, vous ne pouvez pas sortir comme ça!";
+    }
+
+    /// <summary>
     /// Affiche le texte de fin de partie
     /// </summary>
     public void EndGame()

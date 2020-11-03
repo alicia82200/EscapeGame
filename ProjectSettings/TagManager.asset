@@ -21,6 +21,7 @@ TagManager:
   - Saucisse
   - BodyCol
   - Basketball
+  - Door
   layers:
   - Default
   - TransparentFX

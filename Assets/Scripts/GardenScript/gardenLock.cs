@@ -332,7 +332,6 @@ public class gardenLock : MonoBehaviour
             if (tryUnlock(tryCode.text))
             {
                 isLocked = false;
-                screenText.color = Color.green;
                 screenText.text = "True";
                 greenLight.SetActive(true);
                 redLight.SetActive(false);
@@ -341,7 +340,6 @@ public class gardenLock : MonoBehaviour
             else
             {
                 tryCode.text = "";
-                screenText.color = Color.red;
                 screenText.text = "Wrong \ncode";
             }
 

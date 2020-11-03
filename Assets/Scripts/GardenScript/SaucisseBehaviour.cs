@@ -52,6 +52,7 @@ public class SaucisseBehaviour : MonoBehaviour
         if(other.tag == "BodyCol" && saucisseState == "Good")
         {
             GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EatWell();
+            GameObject.FindGameObjectWithTag("Door").GetComponent<GardenDoorBehaviour>().foodEaten = true;
             Destroy(this);
         }
     }
