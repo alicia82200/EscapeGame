@@ -22,6 +22,8 @@ TagManager:
   - BodyCol
   - Basketball
   - Door
+  - Garbage
+  - Ring
   layers:
   - Default
   - TransparentFX
