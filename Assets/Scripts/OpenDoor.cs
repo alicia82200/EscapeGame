@@ -22,9 +22,12 @@ public class OpenDoor : MonoBehaviour {
 	private bool enter = false;
 
     public bool finalDoor;
+    public bool isTouched = false;
+    public bool wasTouched = false;
+    private int frameCounter = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 			defaultRot = transform.eulerAngles;
 			openRot = new Vector3 (defaultRot.x, defaultRot.y + DoorOpenAngle, defaultRot.z);
@@ -34,7 +37,11 @@ public class OpenDoor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (open) {
+
+        isTouched = GetComponent<Interactable>().isHovering;
+
+        if (open) 
+        {
             transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, openRot, Time.deltaTime * smooth);
             transform.position = Vector3.Slerp(transform.position, openPos, Time.deltaTime * smooth);
             if (AudioS == false)
@@ -48,18 +55,32 @@ public class OpenDoor : MonoBehaviour {
                 GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EndGame();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            
-
-        } else {
+        } 
+        else 
+        {
             transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, defaultRot, Time.deltaTime * smooth);
             transform.position = Vector3.Slerp(transform.position, defaultPos, Time.deltaTime * smooth);
             if (AudioS == true) {
 				gameObject.GetComponent<AudioSource> ().PlayOneShot (CloseAudio);
 				AudioS = false;
 			}
-			
-
 		}
+
+        if (isTouched && wasTouched == false)
+        {
+            enter = true;
+            wasTouched = true;
+        }
+        else if (wasTouched)
+        {
+            enter = false;
+            frameCounter++;
+            if(frameCounter == 200)
+            {
+                wasTouched = false;
+                frameCounter = 0;
+            }
+        }
         
         if (finalDoor == false)
         {
@@ -76,20 +97,6 @@ public class OpenDoor : MonoBehaviour {
             }
         }
         
-    }
-
-	void OnTriggerEnter(Collider col)
-	{
-		if (col.tag == "Player") {
-			enter = true;
-			}
-		}
-
-    void OnTriggerExit(Collider col)
-    {
-	    if (col.tag == "Player") {
-		    enter = false;
-	    }
     }
 
     private void OnMouseDown()

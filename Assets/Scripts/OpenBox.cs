@@ -12,10 +12,11 @@ public class OpenBox : MonoBehaviour
     private bool unlock = false;
     private bool open = false;
 
+    public bool isTouched = false;
+
     // Use this for initialization
     void Start()
     {
-
         defaultRot = transform.eulerAngles;
         openRot = new Vector3(defaultRot.x, defaultRot.y, defaultRot.z - BoxOpenAngle);
     }
@@ -23,6 +24,13 @@ public class OpenBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isTouched = GetComponent<Interactable>().isHovering;
+
+        if(isTouched)
+        {
+            open = true;
+        }
+
         if (unlock)
         {
             defaultRot = Vector3.Lerp(defaultRot, openRot, Time.deltaTime);
@@ -33,22 +41,6 @@ public class OpenBox : MonoBehaviour
         if (GameObject.FindWithTag("Key").GetComponent<keyBehaviour>().isUsed && open)   //peut s'ouvrir si on a la clé en main
         {
             unlock = true;
-        }
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Player")    //ouvrir le coffre en le touchant 
-        {
-            open = true;
-        }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if (col.tag == "Player")
-        {
-            open = false;
         }
     }
 

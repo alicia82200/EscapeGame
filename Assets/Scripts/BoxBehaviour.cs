@@ -378,8 +378,8 @@ public class BoxBehaviour : MonoBehaviour
     {
         foreach (GameObject i in gObjList)
         {
-            GameObject bouton = Instantiate(i, transform);          // Vector3(0.6f, 0.77f, 0.0f) est la position du centre souhaitée
-            bouton.transform.localPosition = new Vector3(0.6f + rayonBoutons * Mathf.Cos(Mathf.Deg2Rad * gObjList.IndexOf(i) * espacementBoutons), 0.77f, rayonBoutons * Mathf.Sin(Mathf.Deg2Rad * gObjList.IndexOf(i) * espacementBoutons));
+            GameObject bouton = Instantiate(i, transform);          // Vector3(0.6f, 0.78f, 0.0f) est la position du centre souhaitée
+            bouton.transform.localPosition = new Vector3(0.6f + rayonBoutons * Mathf.Cos(Mathf.Deg2Rad * gObjList.IndexOf(i) * espacementBoutons), 0.78f, rayonBoutons * Mathf.Sin(Mathf.Deg2Rad * gObjList.IndexOf(i) * espacementBoutons));
             bouton.transform.localScale = bouton.transform.localScale *3 / 4;
             bouton.transform.eulerAngles = new Vector3(bouton.transform.eulerAngles.x, bouton.transform.eulerAngles.y + 180, bouton.transform.eulerAngles.z);
             boutons.Add(bouton.GetComponent<buttonBehavior>());

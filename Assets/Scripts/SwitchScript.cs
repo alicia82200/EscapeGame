@@ -10,6 +10,9 @@ public class SwitchScript : MonoBehaviour
     private Vector3 lightRot;
     private Vector3 nightRot;
     private bool changeSwitch = false;
+    public bool isTouched = false;
+    public bool wasTouched = false;
+    private int frameCounter = 0;
 
     // Nightmode variables
     public bool nightMode = false;
@@ -26,6 +29,24 @@ public class SwitchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isTouched = GetComponent<Interactable>().isHovering;
+
+        if (isTouched && wasTouched == false)
+        {
+            changeSwitch = !changeSwitch;
+            changeLight = true;
+            wasTouched = true;
+        }
+        else if (wasTouched)
+        {
+            frameCounter++;
+            if (frameCounter == 200)
+            {
+                wasTouched = false;
+                frameCounter = 0;
+            }
+        }
+
         if (changeSwitch)
         {
             transform.localEulerAngles = nightRot;
@@ -42,15 +63,6 @@ public class SwitchScript : MonoBehaviour
             changeLight = false;
             linkedLight.GetComponent<OnOffLight>().lightOff = nightMode;
             nightNotes.SetActive(nightMode);
-        }
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Player")    
-        {
-            changeSwitch = !changeSwitch;
-            changeLight = true;
         }
     }
 

@@ -299,7 +299,10 @@ public class phoneBehavior : MonoBehaviour
                     break;
 
                 case 10:
-                    tryCode.text = tryCode.text.Substring(0, tryCode.text.Length - 1);
+                    if (tryCode.text.Length != 0)
+                    {
+                        tryCode.text = tryCode.text.Substring(0, tryCode.text.Length - 1);
+                    }
                     unChiffreEnPlusPasPlus = false;
                     break;
 
@@ -325,7 +328,10 @@ public class phoneBehavior : MonoBehaviour
                     break;
 
                 case 10:
-                    tryCode.text = tryCode.text.Substring(0, tryCode.text.Length - 1);
+                    if (tryCode.text.Length != 0)
+                    {
+                        tryCode.text = tryCode.text.Substring(0, tryCode.text.Length - 1);
+                    }
                     unChiffreEnPlusPasPlus = false;
                     break;
             }
