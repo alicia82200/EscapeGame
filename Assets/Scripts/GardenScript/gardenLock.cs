@@ -189,17 +189,17 @@ public class gardenLock : MonoBehaviour
         {
             if (0.0f < angle && angle <= Mathf.PI / 12)
             {
-                idCurrentButton = 10;
+                idCurrentButton = 4;
             }
 
             if (Mathf.PI / 12 < angle && angle <= 3 * Mathf.PI / 12)
             {
-                idCurrentButton = 9;
+                idCurrentButton = 5;
             }
 
             if (3 * Mathf.PI / 12 < angle && angle <= 5 * Mathf.PI / 12)
             {
-                idCurrentButton = 8;
+                idCurrentButton = 6;
             }
 
             if ((5 * Mathf.PI / 12 < angle && angle <= Mathf.PI / 2) || (-Mathf.PI / 2 <= angle && angle <= -5 * Mathf.PI / 12))
@@ -209,17 +209,17 @@ public class gardenLock : MonoBehaviour
 
             if (-5 * Mathf.PI / 12 < angle && angle <= -3 * Mathf.PI / 12)
             {
-                idCurrentButton = 6;
+                idCurrentButton = 8;
             }
 
             if (-3 * Mathf.PI / 12 < angle && angle <= -Mathf.PI / 12)
             {
-                idCurrentButton = 5;
+                idCurrentButton = 9;
             }
 
             if (-Mathf.PI / 12 < angle && angle <= 0.0)
             {
-                idCurrentButton = 4;
+                idCurrentButton = 10;
             }
         }
 
@@ -227,17 +227,17 @@ public class gardenLock : MonoBehaviour
         {
             if (0.0f < angle && angle <= Mathf.PI / 12)
             {
-                idCurrentButton = 4;
+                idCurrentButton = 10;
             }
 
             if (Mathf.PI / 12 < angle && angle <= 3 * Mathf.PI / 12)
             {
-                idCurrentButton = 3;
+                idCurrentButton = 11;
             }
 
             if (3 * Mathf.PI / 12 < angle && angle <= 5 * Mathf.PI / 12)
             {
-                idCurrentButton = 2;
+                idCurrentButton = 12;
             }
 
             if ((5 * Mathf.PI / 12 < angle && angle <= Mathf.PI / 2) || (-Mathf.PI / 2 <= angle && angle <= -5 * Mathf.PI / 12))
@@ -247,17 +247,17 @@ public class gardenLock : MonoBehaviour
 
             if (-5 * Mathf.PI / 12 < angle && angle <= -3 * Mathf.PI / 12)
             {
-                idCurrentButton = 12;
+                idCurrentButton = 2;
             }
 
             if (-3 * Mathf.PI / 12 < angle && angle <= -Mathf.PI / 12)
             {
-                idCurrentButton = 11;
+                idCurrentButton = 3;
             }
 
             if (-Mathf.PI / 12 < angle && angle <= 0.0)
             {
-                idCurrentButton = 10;
+                idCurrentButton = 4;
             }
         }
 

@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Valve.VR;
+using Valve.VR.InteractionSystem;
+
 public class BBQButton : MonoBehaviour
 {
     public bool fire = false;
     public GameObject fireParticule;
 
     private bool firstTime = true;
+    public bool isTouched = false;
+    public bool wasTouched = false;
+    private int frameCounter = 0;
 
     // Update is called once per frame
     [System.Obsolete]
     void Update()
     {
+        isTouched = GetComponent<Interactable>().isHovering;
+
         if (fire)
         {
             fireParticule.GetComponent<ParticleSystem>().loop = true;
@@ -35,15 +43,22 @@ public class BBQButton : MonoBehaviour
                 fireParticule.GetComponent<ParticleSystem>().loop = false;
             }
         }
-    }
 
-   /*void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Player")
+        if (isTouched && wasTouched == false)
         {
             fire = !fire;
+            wasTouched = true;
         }
-    }*/
+        else if (wasTouched)
+        {
+            frameCounter++;
+            if (frameCounter == 200)
+            {
+                wasTouched = false;
+                frameCounter = 0;
+            }
+        }
+    }
 
     private void OnMouseDown()
     {

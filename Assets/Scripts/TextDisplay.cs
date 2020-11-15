@@ -11,6 +11,8 @@ public class TextDisplay : MonoBehaviour
     Text[] textObjects;
 
     bool firstText = false;
+    bool eatText = false;
+    bool hungryText = false;
     int frameCounter = 0;
 
     float initialTime;
@@ -48,7 +50,39 @@ public class TextDisplay : MonoBehaviour
                     initialTime = Time.realtimeSinceStartup;
                 }
             }
-        } else if(timerRunning)
+        } 
+        else if (eatText)
+        {
+            frameCounter++;
+            if (frameCounter > 200)
+            {
+                textObjects[0].color = new Color(textObjects[0].color.r, textObjects[0].color.g, textObjects[0].color.b, textObjects[0].color.a - 0.003f);
+                if (textObjects[0].color.a <= 0)
+                {
+                    frameCounter = 0;
+                    textObjects[0].text = "";
+                    textObjects[0].color = new Color(textObjects[0].color.r, textObjects[0].color.g, textObjects[0].color.b, 1.0f);
+                    eatText = false;
+                }
+            }
+        }
+        else if (hungryText)
+        {
+            frameCounter++;
+            if (frameCounter > 200)
+            {
+                textObjects[0].color = new Color(textObjects[0].color.r, textObjects[0].color.g, textObjects[0].color.b, textObjects[0].color.a - 0.003f);
+                if (textObjects[0].color.a <= 0)
+                {
+                    frameCounter = 0;
+                    textObjects[0].text = "";
+                    textObjects[0].color = new Color(textObjects[0].color.r, textObjects[0].color.g, textObjects[0].color.b, 1.0f);
+                    hungryText = false;
+                }
+            }
+        }
+
+        if (timerRunning)
         {
             DisplayTime();
         }
@@ -63,21 +97,21 @@ public class TextDisplay : MonoBehaviour
         {
             case 1:
                 {
-                    textObjects[0].text = "Vous vous réveillez dans une chambre inconnue...";
-                    textObjects[0].text += "Trouvez le code du portable de votre hôte pour effacer les photos compromettantes et enfuyez vous !";
+                    textObjects[0].text = "You wake up in an unknown room ...";
+                    textObjects[0].text += "Find your host's cellphone code to erase the compromising photos and run away!";
                     break;
                 }
             case 2:
                 {
-                    textObjects[0].text = "Vous êtes bien sorti de l'appartement mais le jardin est cloturé.";
-                    textObjects[0].text += "Vous êtes affamé, trouvez de quoi vous sustenter.";
-                    textObjects[0].text += "Puis cherchez un moyen d'ouvrir le portail afin de rentrer chez vous !";
+                    textObjects[0].text = "You have come out of the apartment, but the garden is fenced.";
+                    textObjects[0].text += "You are hungry, find something to eat.";
+                    textObjects[0].text += "Then find a way to open the portal to get home!";
                     break;
                 }
             case 3:
                 {
-                    textObjects[0].text = "Vous avez réussi à sortir de chez cet inconnu.";
-                    textObjects[0].text += "Rentrez chez vous !";
+                    textObjects[0].text = "You managed to get out of this stranger's house.";
+                    textObjects[0].text += "But you don't have any money with you to go home. Seek help.";
                     break;
                 }
             default:
@@ -98,7 +132,8 @@ public class TextDisplay : MonoBehaviour
     {
         textObjects[0].fontSize = 40;
         textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
-        textObjects[0].text = "Vous avez bien mangé, vous pouvez essayer de sortir maintenant!";
+        textObjects[0].text = "You have eaten well, you can try to get out now!";
+        eatText = true;
     }
 
     /// <summary>
@@ -108,7 +143,8 @@ public class TextDisplay : MonoBehaviour
     {
         textObjects[0].fontSize = 40;
         textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
-        textObjects[0].text = "Vous êtes toujours affamé, vous ne pouvez pas sortir comme ça!";
+        textObjects[0].text = "You are always hungry, you can't go out like this!";
+        hungryText = true;
     }
 
     /// <summary>
@@ -118,7 +154,6 @@ public class TextDisplay : MonoBehaviour
     {
         textObjects[0].fontSize = 40;
         textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
-        textObjects[0].text = "Vous avez réussi, bravo !";
         timerRunning = false;
     }
 
@@ -157,7 +192,7 @@ public class TextDisplay : MonoBehaviour
         if(Mathf.RoundToInt(timeLeft) <= 0)
         {
             textObjects[1].text = "";
-            textObjects[0].text = "Vous avez perdu !";
+            textObjects[0].text = "You loose !";
             textObjects[0].fontSize = 50;
             textObjects[0].color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
         }

@@ -184,7 +184,7 @@ namespace Valve.VR.InteractionSystem
 
 			CheckForSpawnPoint();
 
-			Invoke( "ShowTeleportHint", 5.0f );
+			Invoke( "ShowTeleportHint", 3.0f );
 		}
 
 
@@ -580,8 +580,8 @@ namespace Valve.VR.InteractionSystem
 					playAreaPreviewSides[3].transform.parent = playAreaPreviewTransform;
 				}
 
-				float x = chaperone.playAreaSizeX;
-				float z = chaperone.playAreaSizeZ;
+				float x = chaperone.playAreaSizeX ;
+				float z = chaperone.playAreaSizeZ ;
 
 				playAreaPreviewSides[0].localPosition = new Vector3( 0.0f, 0.0f, 0.5f * z - 0.25f );
 				playAreaPreviewSides[1].localPosition = new Vector3( 0.0f, 0.0f, -0.5f * z + 0.25f );
@@ -845,7 +845,7 @@ namespace Valve.VR.InteractionSystem
 			headAudioSource.transform.localPosition = Vector3.zero;
 			PlayAudioClip( headAudioSource, teleportSound );
 
-			Invoke( "TeleportPlayer", currentFadeTime );
+			Invoke("TeleportPlayer", currentFadeTime);
 		}
 
 

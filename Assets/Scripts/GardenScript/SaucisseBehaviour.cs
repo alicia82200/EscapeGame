@@ -53,7 +53,7 @@ public class SaucisseBehaviour : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EatWell();
             GameObject.FindGameObjectWithTag("Door").GetComponent<GardenDoorBehaviour>().foodEaten = true;
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

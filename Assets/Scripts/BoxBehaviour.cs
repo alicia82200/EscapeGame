@@ -198,44 +198,6 @@ public class BoxBehaviour : MonoBehaviour
         {
             if (0.0f < angle && angle <= Mathf.PI / 12)
             {
-                idCurrentButton = 10;
-            }
-
-            if (Mathf.PI / 12 < angle && angle <= 3 * Mathf.PI / 12)
-            {
-                idCurrentButton = 9;
-            }
-
-            if (3 * Mathf.PI / 12 < angle && angle <= 5 * Mathf.PI / 12)
-            {
-                idCurrentButton = 8;
-            }
-
-            if ((5 * Mathf.PI / 12 < angle && angle <= Mathf.PI / 2) || (-Mathf.PI / 2 <= angle && angle <= -5 * Mathf.PI / 12))
-            {
-                idCurrentButton = 7;
-            }
-
-            if (-5 * Mathf.PI / 12 < angle && angle <= -3 * Mathf.PI / 12)
-            {
-                idCurrentButton = 6;
-            }
-
-            if (-3 * Mathf.PI / 12 < angle && angle <= -Mathf.PI / 12)
-            {
-                idCurrentButton = 5;
-            }
-
-            if (-Mathf.PI / 12 < angle && angle <= 0.0)
-            {
-                idCurrentButton = 4;
-            }
-        }
-
-        if (menuPosition[0] < 0)
-        {
-            if (0.0f < angle && angle <= Mathf.PI / 12)
-            {
                 idCurrentButton = 4;
             }
 
@@ -267,6 +229,44 @@ public class BoxBehaviour : MonoBehaviour
             if (-Mathf.PI / 12 < angle && angle <= 0.0)
             {
                 idCurrentButton = 10;
+            }
+        }
+
+        if (menuPosition[0] < 0)
+        {
+            if (0.0f < angle && angle <= Mathf.PI / 12)
+            {
+                idCurrentButton = 10;
+            }
+
+            if (Mathf.PI / 12 < angle && angle <= 3 * Mathf.PI / 12)
+            {
+                idCurrentButton = 9;
+            }
+
+            if (3 * Mathf.PI / 12 < angle && angle <= 5 * Mathf.PI / 12)
+            {
+                idCurrentButton = 8;
+            }
+
+            if ((5 * Mathf.PI / 12 < angle && angle <= Mathf.PI / 2) || (-Mathf.PI / 2 <= angle && angle <= -5 * Mathf.PI / 12))
+            {
+                idCurrentButton = 7;
+            }
+
+            if (-5 * Mathf.PI / 12 < angle && angle <= -3 * Mathf.PI / 12)
+            {
+                idCurrentButton = 6;
+            }
+
+            if (-3 * Mathf.PI / 12 < angle && angle <= -Mathf.PI / 12)
+            {
+                idCurrentButton = 5;
+            }
+
+            if (-Mathf.PI / 12 < angle && angle <= 0.0)
+            {
+                idCurrentButton = 4;
             }
         }
 

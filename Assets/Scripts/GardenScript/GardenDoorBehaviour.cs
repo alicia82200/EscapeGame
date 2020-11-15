@@ -8,6 +8,7 @@ public class GardenDoorBehaviour : MonoBehaviour
 {
     private bool isTouch;
     public bool foodEaten;
+    private bool isUnlock = false;
     public GameObject gardenLockObject;
 
     // Start is called before the first frame update
@@ -15,26 +16,24 @@ public class GardenDoorBehaviour : MonoBehaviour
     {
         isTouch = false;
         foodEaten = false;
-        gameObject.GetComponent<Interactable>().enabled = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!gardenLockObject.GetComponent<gardenLock>().isLocked)  // si la serrure est dévérouillée
-        {
-            gameObject.GetComponent<Interactable>().enabled = true;
-        }
-
+        isUnlock = !gardenLockObject.GetComponent<gardenLock>().isLocked;
         isTouch = GetComponent<Interactable>().isHovering;
 
         if (isTouch)
         {
-            if(foodEaten)
+            if (foodEaten)
             {
-                GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EndGame();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                if (isUnlock)
+                {
+                    GameObject.FindGameObjectWithTag("MainCanva").GetComponent<TextDisplay>().EndGame();
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
             }
             else
             {
