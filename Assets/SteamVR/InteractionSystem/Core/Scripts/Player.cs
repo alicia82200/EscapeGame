@@ -341,14 +341,14 @@ namespace Valve.VR.InteractionSystem
 				}
 				else
 				{
-                    /*
-					Hand.HandType guessHandType = hand.currentHandType;
+					
+					SteamVR_Input_Sources guessHandType = hand.handType;
 
-					if ( guessHandType == Hand.HandType.Left )
+					if ( guessHandType == SteamVR_Input_Sources.LeftHand)
 					{
 						Gizmos.DrawIcon( hand.transform.position, "vr_interaction_system_left_hand_question.png" );
 					}
-					else if ( guessHandType == Hand.HandType.Right )
+					else if ( guessHandType == SteamVR_Input_Sources.RightHand)
 					{
 						Gizmos.DrawIcon( hand.transform.position, "vr_interaction_system_right_hand_question.png" );
 					}
@@ -356,7 +356,7 @@ namespace Valve.VR.InteractionSystem
 					{
 						Gizmos.DrawIcon( hand.transform.position, "vr_interaction_system_unknown_hand.png" );
 					}
-                    */
+                    
 				}
 			}
 		}

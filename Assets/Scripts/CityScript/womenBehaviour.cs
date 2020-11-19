@@ -180,21 +180,12 @@ public class womenBehaviour : MonoBehaviour
         {
             if (0.0f < angle && angle <= Mathf.PI / 2)
             {
-                idCurrentButton = 1;
-            }
-
-            if (Mathf.PI / 2 < angle && angle <= Mathf.PI)
-            {
                 idCurrentButton = 2;
             }
 
-            if (Mathf.PI < angle && angle <= 3 * Mathf.PI / 2)
+            if (-Mathf.PI / 2 < angle && angle <= 0.0f)
             {
                 idCurrentButton = 3;
-            }
-            if (3 * Mathf.PI / 2 < angle && angle <= 0.0)
-            {
-                idCurrentButton = 4;
             }
         }
 
@@ -202,21 +193,12 @@ public class womenBehaviour : MonoBehaviour
         {
             if (0.0f < angle && angle <= Mathf.PI / 2)
             {
-                idCurrentButton = 1;
-            }
-
-            if (Mathf.PI / 2 < angle && angle <= Mathf.PI)
-            {
-                idCurrentButton = 2;
-            }
-
-            if (Mathf.PI < angle && angle <= 3 * Mathf.PI / 2)
-            {
-                idCurrentButton = 3;
-            }
-            if (3 * Mathf.PI / 2 < angle && angle <= 0.0)
-            {
                 idCurrentButton = 4;
+            }
+
+            if (-Mathf.PI / 2 < angle && angle <= 0.0f)
+            {
+                idCurrentButton = 1;
             }
         }
 
@@ -344,7 +326,7 @@ public class womenBehaviour : MonoBehaviour
     {
         if (other.tag == "Ring")
         {
-            GameObject.Destroy(other);
+            GameObject.Destroy(other.gameObject);
             isHelped = true;
         }
     }

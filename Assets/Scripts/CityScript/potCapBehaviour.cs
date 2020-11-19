@@ -6,19 +6,18 @@ using Valve.VR.InteractionSystem;
 public class potCapBehaviour : MonoBehaviour
 {
     private bool isMoovable = false;
-    private bool canBeMooved = false;
+    public bool canBeMooved = false;
 
     public GameObject areaNW;
     public GameObject areaSW;
     public GameObject areaSE;
     public GameObject areaNE;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Interactable>().enabled = false;
-        GetComponent<Throwable>().enabled = false;
-        GetComponent<VelocityEstimator>().enabled = false;
+        this.gameObject.GetComponent<Rigidbody>().constraints = (RigidbodyConstraints)126;
     }
 
     // Update is called once per frame
@@ -27,9 +26,8 @@ public class potCapBehaviour : MonoBehaviour
         if(canBeMooved && isMoovable == false)
         {
             isMoovable = true;
-            GetComponent<Interactable>().enabled = true;
-            GetComponent<VelocityEstimator>().enabled = true;
-            GetComponent<Throwable>().enabled = true;
+            this.gameObject.GetComponent<Rigidbody>().constraints = (RigidbodyConstraints)0;
+            this.gameObject.AddComponent<Throwable>();
         }
 
         if(areaNW.GetComponent<areaColScript>().isFilled &&

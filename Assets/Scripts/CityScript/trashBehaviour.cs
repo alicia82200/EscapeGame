@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class trashBehaviour : MonoBehaviour
 {
-    private bool canBeUsed = false;
+    public bool canBeUsed = false;
     public GameObject men;
 
     private void Update()
@@ -16,7 +16,7 @@ public class trashBehaviour : MonoBehaviour
     {
         if (other.tag == "Garbage" && canBeUsed)
         {
-            GameObject.Destroy(other);
+            GameObject.Destroy(other.gameObject);
             men.GetComponent<menBehaviour>().garbageInTrash++;
         }
     }
