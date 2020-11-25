@@ -33,8 +33,7 @@ public class TextDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = camera.transform.position + 4.0f * camera.transform.forward;
-
+        
         if(firstText)
         {
             frameCounter++;
@@ -97,12 +96,16 @@ public class TextDisplay : MonoBehaviour
         {
             case 1:
                 {
+                    textObjects[0].fontSize = 40;
+                    textObjects[0].color = new Color(0.0f, 0.0f, 0.1f, 1.0f);
                     textObjects[0].text = "You wake up in an unknown room ...";
                     textObjects[0].text += "Find your host's cellphone code to erase the compromising photos and run away!";
                     break;
                 }
             case 2:
                 {
+                    textObjects[0].fontSize = 40;
+                    textObjects[0].color = new Color(0.0f, 0.0f, 0.1f, 1.0f);
                     textObjects[0].text = "You have come out of the apartment, but the garden is fenced.";
                     textObjects[0].text += "You are hungry, find something to eat.";
                     textObjects[0].text += "Then find a way to open the portal to get home!";
@@ -110,6 +113,8 @@ public class TextDisplay : MonoBehaviour
                 }
             case 3:
                 {
+                    textObjects[0].fontSize = 40;
+                    textObjects[0].color = new Color(0.0f, 0.0f, 0.1f, 1.0f);
                     textObjects[0].text = "You managed to get out of this stranger's house.";
                     textObjects[0].text += "But you don't have any money with you to go home. Seek help.";
                     break;
@@ -142,18 +147,16 @@ public class TextDisplay : MonoBehaviour
     public void HungryText()
     {
         textObjects[0].fontSize = 40;
-        textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+        textObjects[0].color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
         textObjects[0].text = "You are always hungry, you can't go out like this!";
         hungryText = true;
     }
 
     /// <summary>
-    /// Affiche le texte de fin de partie
+    /// Arrête le chronomètre
     /// </summary>
     public void EndGame()
     {
-        textObjects[0].fontSize = 40;
-        textObjects[0].color = new Color(0.0f, 1.0f, 0.0f, 1.0f);
         timerRunning = false;
     }
 

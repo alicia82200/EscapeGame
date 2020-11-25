@@ -8,16 +8,16 @@ public class MainMenu : MonoBehaviour
 
     public void PlayChapter1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1, 0);
     }
 
     public void PlayChapter2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2, 0);
     }
 
     public void PlayChapter3()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(3, 0);
     }
 }

@@ -249,10 +249,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 0
-  m_Color: {r: 1, g: 0.99642926, b: 0.8349056, a: 1}
-  m_Intensity: 6
-  m_Range: 14
-  m_SpotAngle: 80
+  m_Color: {r: 1, g: 0.989106, b: 0.5424528, a: 1}
+  m_Intensity: 5
+  m_Range: 18
+  m_SpotAngle: 60.8
   m_InnerSpotAngle: 5
   m_CookieSize: 10
   m_Shadows:

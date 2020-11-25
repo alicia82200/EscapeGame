@@ -645,7 +645,7 @@ namespace Valve.VR.InteractionSystem
 
 			teleportArc.Hide();
 
-			foreach ( TeleportMarkerBase teleportMarker in teleportMarkers )
+            foreach (TeleportMarkerBase teleportMarker in teleportMarkers)
 			{
 				if ( teleportMarker != null && teleportMarker.markerActive && teleportMarker.gameObject != null )
 				{
